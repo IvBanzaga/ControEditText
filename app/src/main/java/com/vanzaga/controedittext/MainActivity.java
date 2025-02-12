@@ -1,5 +1,7 @@
 package com.vanzaga.controedittext;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (!nombre.isEmpty() && !password.isEmpty()){
             Toast.makeText(this,"Realizando Registro",Toast.LENGTH_LONG).show();
+            // Redirigir a google.com
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+            startActivity(browserIntent);
         }
     }
 }
